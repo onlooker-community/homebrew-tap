@@ -5,21 +5,21 @@
 class Onlooker < Formula
   desc "Local observability agent for Claude Code"
   homepage "https://onlooker.dev"
-  version "1.8.0"
+  version "1.9.0"
   license "BlueOak-1.0.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/onlooker-community/onlooker/releases/download/v1.8.0/onlooker_darwin_amd64.tar.gz"
-      sha256 "7273250616858442320a04b2deabe2f43b944d544dfd9badfc2935e62128069f"
+      url "https://github.com/onlooker-community/onlooker/releases/download/v1.9.0/onlooker_darwin_amd64.tar.gz"
+      sha256 "d2a2cba5ae45f771d3d0911e05e8590b5efecd7a1970c9e4106d06e0944fa0f9"
 
       define_method(:install) do
         bin.install "onlooker"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/onlooker-community/onlooker/releases/download/v1.8.0/onlooker_darwin_arm64.tar.gz"
-      sha256 "2c630a86db89e5ba53dd206d042efdb20f7481fcd1b9349665e82e6f4672edf5"
+      url "https://github.com/onlooker-community/onlooker/releases/download/v1.9.0/onlooker_darwin_arm64.tar.gz"
+      sha256 "11bf02c3eaec7a1890c54f2af995661359348b468870e0603db33d8f0fb57517"
 
       define_method(:install) do
         bin.install "onlooker"
@@ -29,15 +29,15 @@ class Onlooker < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/onlooker-community/onlooker/releases/download/v1.8.0/onlooker_linux_amd64.tar.gz"
-      sha256 "434b17a5371053697896519db2ce2d6166af45d2752016153948d1f86dc0a504"
+      url "https://github.com/onlooker-community/onlooker/releases/download/v1.9.0/onlooker_linux_amd64.tar.gz"
+      sha256 "52fcf06755cd7063851c6f9e22650b2d6ab4b6d36046c9f4e421392d0d2ede2b"
       define_method(:install) do
         bin.install "onlooker"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/onlooker-community/onlooker/releases/download/v1.8.0/onlooker_linux_arm64.tar.gz"
-      sha256 "3c20632beee4f4e0caae891ffe686c73cc5a836cea71d4384c8272c4f0147b0f"
+      url "https://github.com/onlooker-community/onlooker/releases/download/v1.9.0/onlooker_linux_arm64.tar.gz"
+      sha256 "87ed0788a4201fbb7aa8ebaecb5cf99eaa1a8e9141256dfce0ca666eec8ca1d8"
       define_method(:install) do
         bin.install "onlooker"
       end
