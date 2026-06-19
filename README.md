@@ -14,4 +14,4 @@ brew install <FORMULA>
 
 | Repository                                                 | Formula                          | Description                |
 | ---------------------------------------------------------- | -------------------------------- | -------------------------- |
-| [onlooker](https://github.com/onlooker-community/onlooker) | [formula](./Formula/onlooker.rb) | CLI agent for Onlooker App |
+| [onlooker](https://github.com/onlooker-community/onlooker-cli) | [formula](./Formula/onlooker.rb) | CLI agent for Onlooker App |
