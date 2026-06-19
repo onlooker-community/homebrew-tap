@@ -10,7 +10,7 @@ class Onlooker < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/onlooker-community/onlooker/releases/download/v1.10.0/onlooker_darwin_amd64.tar.gz"
+      url "https://github.com/onlooker-community/onlooker-cli/releases/download/v1.10.0/onlooker_darwin_amd64.tar.gz"
       sha256 "b18380138fb4baebb09fddfdcd9196886c0cbafff6151c5a9eb5bd79982d410a"
 
       define_method(:install) do
@@ -18,7 +18,7 @@ class Onlooker < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/onlooker-community/onlooker/releases/download/v1.10.0/onlooker_darwin_arm64.tar.gz"
+      url "https://github.com/onlooker-community/onlooker-cli/releases/download/v1.10.0/onlooker_darwin_arm64.tar.gz"
       sha256 "0279ceaf6bbac422c8035d3913ef845e75291870f89c226d99c6e09f2f051c01"
 
       define_method(:install) do
@@ -29,15 +29,17 @@ class Onlooker < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/onlooker-community/onlooker/releases/download/v1.10.0/onlooker_linux_amd64.tar.gz"
+      url "https://github.com/onlooker-community/onlooker-cli/releases/download/v1.10.0/onlooker_linux_amd64.tar.gz"
       sha256 "ab12af0f025cbc932b524a56974fc0f19267e6f358a22f28ac37f44abfddafb2"
+
       define_method(:install) do
         bin.install "onlooker"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/onlooker-community/onlooker/releases/download/v1.10.0/onlooker_linux_arm64.tar.gz"
+      url "https://github.com/onlooker-community/onlooker-cli/releases/download/v1.10.0/onlooker_linux_arm64.tar.gz"
       sha256 "5c7ab1245576e3c696ce55594e7ba3f6ed9412a044d7d7d5dd112bea16597282"
+
       define_method(:install) do
         bin.install "onlooker"
       end
@@ -56,7 +58,7 @@ class Onlooker < Formula
         brew services start onlooker
 
       Config: ~/.config/onlooker/config.toml
-      Docs:   https://onlooker.dev/docs
+      Docs:   https://docs.onlooker.dev
     EOS
   end
 
