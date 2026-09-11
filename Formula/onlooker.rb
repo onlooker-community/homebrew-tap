@@ -5,9 +5,9 @@
 class Onlooker < Formula
   desc "Push approved lessons from your machine to app.onlooker.dev"
   homepage "https://onlooker.dev"
-  url "https://github.com/onlooker-community/onlooker/releases/download/cli-v2.2.0/onlooker-2.2.0.tar.gz"
-  sha256 "11ca91153b412306f47e003cc57e35ca4575861eb420532f78eca61758af9a12"
-  version "2.2.0"
+  url "https://github.com/onlooker-community/onlooker/releases/download/cli-v2.3.0/onlooker-2.3.0.tar.gz"
+  sha256 "f1ce4b52a3514459e5ffec331f0781faedadd56ccc2c9dfec40af75d3bbcc7cf"
+  version "2.3.0"
   license "BlueOak-1.0.0"
 
   depends_on "node"
@@ -24,8 +24,27 @@ class Onlooker < Formula
   # No service block. This CLI has no daemon: it runs, syncs, and exits.
   # Anyone upgrading from the retired Go agent has a launchd job pointed at a
   # subcommand that no longer exists, and Homebrew cannot stop it for them.
+  #
+  # The trust note leads because it is the only line here that costs the reader
+  # something later. Naming the tap on the command line is itself consent -
+  # Homebrew's trust.rb explicitly_allowed? returns early when ARGV holds the
+  # tap or the full formula name - so installing by qualified name succeeds
+  # untrusted and lands right here, while a later bare brew upgrade names no
+  # tap, is refused, and skips the formula without saying why. Printing this
+  # after a successful install is not too late: it is the last moment we can
+  # reach someone who never needed brew trust to get this far. onlooker-284.
+  #
+  # No backticks anywhere in this file: the formula is one JS template literal,
+  # and an unescaped backtick ends it.
   def caveats
     <<~EOS
+      Trust this tap, or Homebrew will skip onlooker when you upgrade:
+
+        brew trust onlooker-community/tap
+
+      A bare brew upgrade names no tap, so an untrusted formula is refused
+      and passed over - on a machine where installing worked fine.
+
       If you previously ran the Onlooker agent as a service, stop it:
 
         brew services stop onlooker
