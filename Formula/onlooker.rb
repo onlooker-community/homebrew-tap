@@ -5,9 +5,9 @@
 class Onlooker < Formula
   desc "Push approved lessons from your machine to app.onlooker.dev"
   homepage "https://onlooker.dev"
-  url "https://github.com/onlooker-community/onlooker/releases/download/cli-v2.5.0/onlooker-2.5.0.tar.gz"
-  sha256 "3db10187193c38c9147c6673332cf313d54382fe152e8bb1e6a736a6e3a8cfce"
-  version "2.5.0"
+  url "https://github.com/onlooker-community/onlooker/releases/download/cli-v2.6.0/onlooker-2.6.0.tar.gz"
+  sha256 "6ef12195bb50a9872ac67a9b3cbe90fac5f9fa39f29eca87008222a70c466e81"
+  version "2.6.0"
   license "BlueOak-1.0.0"
 
   depends_on "node"
