@@ -26,7 +26,7 @@ permissions:
 jobs:
   required:
     name: All checks passed
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     steps:
       - name: Check results
         run: echo "No automated checks are defined for this repository yet."
